@@ -1,20 +1,45 @@
-<main>
-  <section>
-    <h1>Dashboard</h1>
-
-    <h2>Monthly Details</h2>
-    <p>Income</p>
+<main class="h-full w-full flex">
+  <!-- Sidebar -->
+  <section class="w-1/4 p-4 bg-gray-800 text-white">
+    <mat-sidenav mode="side" opened>
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Menu</h3>
+        <nav>
+          <ul class="space-y-2">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Monthly Details</a></li>
+            <li><a href="#">Expense Summary</a></li>
+          </ul>
+        </nav>
+      </div>
+    </mat-sidenav>
   </section>
 
-  <section>
-    <h1>Expense Summary</h1>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+  <!-- Content -->
+  <section class="flex-1 p-4 flex flex-col gap-4">
+    <div class="flex flex-row space-x-5 justify-around items-center w-full">
+      <h1 class="font-bold text-xl">Dashboard</h1>
+      <input
+        type="text"
+        placeholder="Search..."
+        class="w-1/3 bg-transparent outline-none bg-[#2B3342] rounded text-[#CAC9C9] p-2 border border-gray-400"
+      />
+    </div>
+
+    <div
+      class="flex flex-row space-x-5 justify-around items-start w-full h-[400px] border border-gray-400"
+    >
+      <h2 class="font-bold text-base">Monthly Details</h2>
+      <div class="flex flex-row space-x-5">
+        <p class="font-bold">Expenses</p>
+        <p>Income</p>
+      </div>
+    </div>
+
+    <div>
+      <h1 class="text-center font-bold text-base border border-gray-400">
+        Expense Summary
+      </h1>
+    </div>
   </section>
 </main>
