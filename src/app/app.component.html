@@ -3,12 +3,18 @@
   <section class="w-1/4 p-4 bg-gray-800 text-white">
     <mat-sidenav mode="side" opened>
       <div class="p-4">
-        <h3 class="font-bold text-lg">Menu</h3>
+        <h3 class="font-bold text-lg mb-10">Menu</h3>
         <nav>
-          <ul class="space-y-2">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Monthly Details</a></li>
-            <li><a href="#">Expense Summary</a></li>
+          <ul class="space-y-6 rounded">
+            <li class="bg-stone-950 rounded-lg px-5 py-3">
+              <a href="#">Dashboard</a>
+            </li>
+            <li class="">
+              <a href="#">Monthly Details</a>
+            </li>
+            <li class="">
+              <a href="#">Expense Summary</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -17,8 +23,8 @@
 
   <!-- Content -->
   <section class="flex-1 p-4 flex flex-col gap-4">
-    <div class="flex flex-row space-x-5 justify-around items-center w-full">
-      <h1 class="font-bold text-xl">Dashboard</h1>
+    <div class="flex flex-row space-x-5 justify-between items-center w-full">
+      <h1 class="font-bold text-2xl text-start ml-5">Dashboard</h1>
       <input
         type="text"
         placeholder="Search..."
@@ -27,19 +33,33 @@
     </div>
 
     <div
-      class="flex flex-row space-x-5 justify-around items-start w-full h-[400px] border border-gray-400"
+      class="flex flex-row space-x-5 items-start w-full h-[400px] border border-gray-400 rounded justify-between"
     >
-      <h2 class="font-bold text-base">Monthly Details</h2>
-      <div class="flex flex-row space-x-5">
-        <p class="font-bold">Expenses</p>
-        <p>Income</p>
+      <h2 class="font-bold text-base text-start ml-5 mt-5">Monthly Details</h2>
+
+      <div class="flex flex-row space-x-5 justify-end p-5">
+        <button
+          (click)="selectButton('expenses')"
+          [ngClass]="{
+            'font-bold ': selectedButton === 'expenses',
+          
+          }"
+        >
+          Expenses
+        </button>
+        <button
+          (click)="selectButton('income')"
+          [ngClass]="{
+            'font-semibold ': selectedButton === 'income',
+          }"
+        >
+          Income
+        </button>
       </div>
     </div>
 
-    <div>
-      <h1 class="text-center font-bold text-base border border-gray-400">
-        Expense Summary
-      </h1>
+    <div class="border border-gray-400 rounded w-full h-full">
+      <h1 class="text-start font-bold text-base ml-5 mt-5">Expense Summary</h1>
     </div>
   </section>
 </main>
