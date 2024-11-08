@@ -1,6 +1,6 @@
 <main class="h-full w-full flex">
   <!-- Sidebar -->
-  <section class="w-1/4 p-4 bg-gray-800 text-white">
+  <section class="w-1/5 p-4 bg-gray-800 text-white">
     <mat-sidenav mode="side" opened>
       <div class="p-4">
         <h3 class="font-bold text-lg mb-10">Menu</h3>
@@ -23,7 +23,9 @@
 
   <!-- Content -->
   <section class="flex-1 p-4 flex flex-col gap-4">
-    <div class="flex flex-row space-x-5 justify-between items-center w-full">
+    <div
+      class="flex flex-row space-x-5 justify-between items-center border w-full"
+    >
       <h1 class="font-bold text-2xl text-start ml-5">Dashboard</h1>
       <input
         type="text"
@@ -32,34 +34,51 @@
       />
     </div>
 
-    <div
-      class="flex flex-row space-x-5 items-start w-full h-[400px] border border-gray-400 rounded justify-between"
-    >
-      <h2 class="font-bold text-base text-start ml-5 mt-5">Monthly Details</h2>
-
-      <div class="flex flex-row space-x-5 justify-end p-5">
-        <button
-          (click)="selectButton('expenses')"
-          [ngClass]="{
-            'font-bold ': selectedButton === 'expenses',
-          
-          }"
+    <div class="flex flex-row gap-4">
+      <div class="flex flex-col w-full gap-4">
+        <div
+          class="flex flex-row space-x-5 items-start w-full h-[600px] border border-gray-400 rounded justify-between"
         >
-          Expenses
-        </button>
-        <button
-          (click)="selectButton('income')"
-          [ngClass]="{
+          <h2 class="font-bold text-base text-start ml-5 mt-5">
+            Monthly Details
+          </h2>
+
+          <div class="flex flex-row space-x-5 justify-end p-5">
+            <button
+              (click)="selectButton('expenses')"
+              [ngClass]="{
+            'font-bold ': selectedButton === 'expenses',
+          }"
+            >
+              Expenses
+            </button>
+            <button
+              (click)="selectButton('income')"
+              [ngClass]="{
             'font-semibold ': selectedButton === 'income',
           }"
-        >
-          Income
-        </button>
-      </div>
-    </div>
+            >
+              Income
+            </button>
+          </div>
+        </div>
 
-    <div class="border border-gray-400 rounded w-full h-full">
-      <h1 class="text-start font-bold text-base ml-5 mt-5">Expense Summary</h1>
+        <div class="border border-gray-400 rounded w-full h-full">
+          <h1 class="text-start font-bold text-base ml-5 mt-5">
+            Expense Summary
+          </h1>
+        </div>
+      </div>
+
+      <div class="w-full flex flex-col gap-4">
+        <div
+          class="flex-1 p-4 flex flex-row gap-2 border border-gray-400 w-full h-[400px]"
+        >
+          <div>
+            <h2 class="text-start font-bold">Recent Payment</h2>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </main>
